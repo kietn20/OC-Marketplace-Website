@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'bootstrap.html' %}
+    <title>{{item.itemName}} - OC Marketplace</title>
+</head>
+<body>
+    {% include 'banner.html' %}
+    {% include 'nav.html' %}
+    <h1 class="text-center mt-2" style="margin-bottom: 16px;">Item Description</h1>
+    <div class="row">
+        <div class="container col-5">
+            <h3>{{item.itemName}}</h3>
+            <h4 class="lead mt-0">{{item.location}}</h4>
+            <h3>Contacts</h3>
+            <ul>
+                <li>+1 {{item.phoneNumber[0:3]}}-{{item.phoneNumber[3:6]}}-{{item.phoneNumber[6:]}}</li>
+                <li>{{item.email}}</li>
+            </ul>
+
+            <h3>Price</h3>
+            <h4 class="lead">${{item.price}}</h4>
+        </div>
+        <div class="col-3" style="padding-top: 20px;">
+            <a href="mailto:kite@duck.com?subject=Interested%20in%20{{item['name']}}&body=Your%20name%3A%20%3Cyour%20name%20here%3E%0D%0A%0D%0AItem%3A%20%3Cinsert%20the%20item%20that%20you%20are%20interested%20in%20here%3E%0D%0A%0D%0AOffer%3A%20%3Coptional%3E%0D%0A%0D%0AMessage%3A%0D%0A%0D%0A%3Cinsert%20a%20message%20to%20seller%3E" class="btn btn-outline-primary">Buy/Offer</a>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>
