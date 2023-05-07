@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'bootstrap.html' %}
+    <title>Apply for Listing</title>
+    <style>
+        .applyDiv {
+            margin: auto;
+            background-color: rgb(221, 195, 245);
+            max-width: 350px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        input {
+            display: inline-block;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: .5px solid;
+            margin: 10px 0;
+        }
+
+        input[type=submit] {
+            background: orange;
+            display: inline-block;
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: none;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+    <body>
+        {% include 'nav.html' %}
+        {% include 'banner.html' %}
+
+        <h2 style="margin: 20px 0px 40px 0px; text-align: center;">Application for Listing</h2>
+            <div class="applyDiv">
+                <form action="/add-item" style="display: inline-block" method="post">
+                    <div>
+                        <label>Item</label>
+                        <input type="text" name="itemName" placeholder="Shovel">
+                    </div>
+
+                    <div class="mb-2">
+                        <label>Location</label>
+                        <input type="text" name="location" placeholder="Santa Ana">
+                    </div>
+
+                    <div class="mb-2">
+                        <label>Phone Number</label>
+                        <input type="text" name="phoneNumber" placeholder="7141234567">
+                    </div>
+
+                    <div class="mb-2">
+                        <label>Email</label>
+                        <input type="text" name="email" placeholder="Bob@gmail.com">
+                    </div>
+
+                    <div class="mb-2">
+                        <label>Price</label>
+                        <input type="number" name="price" placeholder="25">
+                    </div>
+
+                    <div class="mb-2">
+                        <label>Image</label>
+                        <input type="file" name="image" placeholder="Bob's shovel">
+                    </div>
+
+                    <input style="font-size: 20px; font-weight: 500;" type="submit">
+                </form>
+            </div>
+        {% include 'footer.html' %}
+    </body>
+</html>

@@ -32,3 +32,10 @@ def load_item_from_db(id):
         else:
             return dict(row[0]._mapping)
         
+def dump_item_into_db(data):
+    with engine.connect() as conn:
+        query = text(f"INSERT INTO items (itemName, location, price, phoneNumber, email) VALUES ('{data['itemName']}', '{(data['location'])}', '{data['price']}', '{data['phoneNumber']}', '{data['email']}')")
+        conn.execute(query)
+
+        
+        
